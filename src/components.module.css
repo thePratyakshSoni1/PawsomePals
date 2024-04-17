@@ -1,0 +1,184 @@
+
+.divider{
+    display: block;
+    height: 1rem;
+}
+
+.topBar{
+    width: 100%;
+    background-color: black;
+    min-height: 2rem;
+    position: fixed;
+    top: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+.imgButton{
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    padding: 14px;
+    clip-path: circle();
+    box-shadow: black 5px;
+}
+
+.topPlayerCard{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 16px;
+    height: 60px;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    margin: 5px
+}
+
+.topPlayerCard #rank{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 6px;
+    margin-left: 12px;
+    background-color: yellow;
+    clip-path: circle();
+    z-index: 0;
+}
+
+.topPlayerCard #name{
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-left: 12px;
+}
+
+.topPlayerCard #points{
+    color: orange;
+    font-weight: bold;
+    text-align: end;
+    padding-right: 20px;
+    margin-left: auto;
+}
+
+.singleLineInputField {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-block;
+    border: none;
+    background: lightgray;
+    padding: 18px 27px;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    border-radius: 100px;
+    margin: 4px 0px;
+}
+
+.checkBoxContainer{
+    width: fit-content;
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 8px 12px;
+    border-radius: 100px;
+    margin: 2px;
+}
+
+#checkbox{
+    height: 20px;
+    width: 20px;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.808);
+}
+
+#checkbox img{
+    height: 126%;
+    width: 126%;
+    margin-top: -13%;
+    margin-left: -11%;
+}
+
+
+@media screen and (min-width: 600px){
+    .topPlayerCard{
+        width: 50vw
+    }
+}
+
+
+.chooseLocation{
+    background-color: rgba(0, 0, 0, 0.521);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+#choseLocDialogContainer{
+    width: 80%;
+    height: 75%;
+    display: flex;
+    row-gap: 14px;
+    border-radius: 23px;
+    align-items: center;
+    background: white;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 12px;
+    filter: drop-shadow(0px 0px 30px black);
+}
+
+#choseLocDialogContainer p{
+    margin: 0px;
+    text-align: start;
+    width: 100%;
+    padding-left: 12px;
+    color: grey;
+}
+
+#choseLocDialogContainer h3{
+    margin: 0px;
+    font-size: 1.2rem;
+    padding-left: 12px;
+}
+
+.uploadImageOption{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 5px;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.uploadImageOption img{
+    padding: 6px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 12px;
+    height: auto;
+    border-color: gray;
+    border-style: dashed;
+}
+
+.widthFill{
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
+.heightFill{
+    height: -webkit-fill-available;
+    height: -moz-available;
+}

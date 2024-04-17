@@ -1,0 +1,42 @@
+.main{
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    height: 100vh;    
+    box-sizing: border-box;
+    width: 100vw;    
+    overflow-y: scroll;
+}
+
+.contentContainer .main{
+    min-height: 98vh;
+    display: flex;
+    flex-flow: column;
+}
+
+.contentContainer{
+}
+
+.contentContainer ::-webkit-scrollbar{
+    width: 5px;
+}
+
+.contentContainer ::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.829);
+    border-radius: 100px;
+}
+
+@media screen and (min-width: 600px){
+
+    .main > div:first-child{
+        width: 600px;
+        min-height: 98vh;
+    }
+
+    .main{
+        display: flex;
+        align-items: center;
+    }
+}
+

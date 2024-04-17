@@ -1,0 +1,226 @@
+.main{
+    padding: 0px 23px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.main >  div:first-child{
+    width: -webkit-fill-available;
+    width: -moz-available;
+    max-width: 650px;
+}
+
+.main a{
+    text-decoration: none;
+}
+
+.contentContainer{
+    background-color: rgb(255 165 0 / 37%);
+}
+
+@media screen and (min-width: 650px){
+    .main{
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .main >  div:first-child{
+        margin-top: 3rem;
+    }
+}
+
+
+.profileContainer{
+    
+}
+
+.main .personalDetails{
+    display: flex;
+    align-items: center;
+    border-style: solid orange;
+    border-radius: 14px;
+    border-width: 2px;
+    padding: 0px 14px;
+    margin: 12px -4px;
+    background-color: black;
+    filter: drop-shadow(0px 0px 8px black);
+    color: white;
+    z-index: 1;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.personalDetails img{
+    width: 70px;
+    clip-path: circle();
+    object-fit: cover;
+}
+
+#nameAndNumber #name{
+    font-size: 1.12rem;
+    font-weight: bold;
+    width: 40vw;
+    max-width: 250px;
+    background-color: black;
+    color: white;
+    border: none;
+    white-space: break-spaces;
+    margin: 0px 8px;
+}
+.personalDetails #nameAndNumber {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 8px;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+#nameAndNumber #contact{
+    font-size: 0.8rem;
+    margin-top: 6px;
+    margin-left: 8px;
+    color: orange;
+}
+
+#karmaPoints{
+    z-index: 0;
+    margin-right: 4px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    display: flex;
+    flex-flow: row;
+    border-radius: 0px 0px 14px 14px;
+    padding: 12px;
+    align-items: center;
+    column-gap: 6px;
+    margin: -12px 12px 12px 12px;
+    animation-name: gradCard;
+    animation-timing-function: linear();
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#karmaPoints span{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 14px;
+    animation-name: colorGrad;
+    animation-timing-function: linear();
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes colorGrad {
+    0%{
+        color: rgb(255, 96, 96);
+    }
+
+    25%{
+        color: rgb(33, 103, 255);
+    }
+
+    50%{
+        color: rgb(255, 166, 0);
+    }
+
+    75%{
+        color: rgb(0, 255, 0)
+    }
+
+    100%{
+        color: rgb(140, 0, 255);
+    }
+}
+
+#karmaPoints p{
+    margin: 0px;
+}
+
+.animalsRescued, .animalsAddedToMap{
+
+    max-height: 430px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgb(255 165 0 );
+    padding: 12px;
+    border-radius: 14px;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.671));
+
+}
+
+.markCard{
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: 73px;
+    border: solid black 2px;
+    margin: 5px 2px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+}
+
+.markCard img{
+    height: -webkit-fill-available;
+    height: -moz-available;
+    aspect-ratio: 1.6;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 6px;
+}
+
+.markCard .titleAndTag{
+    display: flex;
+    flex-flow: column;
+    margin-left: 12px;
+}
+
+.markCard #title{
+    font-size: 1rem;
+    font-weight: bold;    
+    overflow: auto;
+    text-overflow: ellipsis;
+    width: 160px;
+}
+
+.markCard #subText{
+    font-size: 0.8rem;
+    color: orange;
+    margin-top: 5px;
+    width: fit-content;
+
+}
+
+.markCard #backBtn{
+    rotate: 180deg;
+    height: 25px;
+    width: 25px;
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+.contentContainer ::-webkit-scrollbar{
+    width: 5px;
+}
+
+.contentContainer ::-webkit-scrollbar-thumb{
+    width: 5px;
+    background-color: rgba(0, 0, 0, 0.39);
+    border-radius: 100px;
+}
+
+
+
+#divTitle{
+    font-size: 1.4rem;
+    font-weight: bold;
+}

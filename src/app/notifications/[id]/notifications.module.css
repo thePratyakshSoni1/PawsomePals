@@ -1,0 +1,119 @@
+.main{
+    margin-top: 2rem;
+    padding: 0px 23px;
+    height: 96vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.main > div:first-child{
+    min-height: -webkit-fill-available; 
+    min-height: -moz-available;
+    display: flex;
+    flex-flow: column; 
+}
+
+@media screen and (min-width: 650px){
+    .main{
+        display: flex;
+        justify-content: center;
+    }
+
+    .main div:first-child{
+        width: 600px;
+        height: -webkit-fill-available; 
+        height: -moz-available;
+    }
+}
+
+#animalImg{
+    width: -moz-available;
+    width: -webkit-fill-available;
+    height: auto;
+    max-height: 50vw;
+    object-fit: cover;
+    margin-top: 2rem;
+    border-radius: 32px;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 96%));
+}
+
+#requestorInfo{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#requestorInfo img{
+    width: 4rem;
+    height: auto;
+    border: solid black 1px;
+    border-radius: 100px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.contentContainer p{
+    width: -webkit-fill-available;
+    width: -moz-available;
+    background-color: lightgray;
+    padding: 12px 16px;
+    border-radius: 18px;
+}
+
+
+.markCard{
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: 73px;
+    border: solid black 2px;
+    margin-top: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+}
+
+.markCard img{
+    height: -webkit-fill-available;
+    height: -moz-available;
+    aspect-ratio: 1.6;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 6px;
+}
+
+.markCard .titleAndTag{
+    display: flex;
+    flex-flow: column;
+    margin-left: 12px;
+}
+
+.markCard #title{
+    font-size: 1rem;
+    font-weight: bold;    
+    overflow: auto;
+    text-overflow: ellipsis;
+    width: 160px;
+}
+
+.markCard #subText{
+    font-size: 0.8rem;
+    color: orange;
+    margin-top: 5px;
+    width: fit-content;
+
+}
+
+.markCard #backBtn{
+    rotate: 180deg;
+    height: 25px;
+    width: 25px;
+    margin-left: auto;
+    margin-right: 8px;
+}

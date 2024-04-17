@@ -1,0 +1,45 @@
+.mainContainer{
+    background-color: rgb(255, 170, 136);
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.topBar{
+    position: sticky;
+    top: 0;
+    background-color: rgb(15, 15, 15);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.playersList{
+    padding: 0px 18px;
+    height: fit-content;
+}
+
+
+@media screen and (min-width: 600px){
+    .playersList{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .topPlayerCard{
+        width: 50vw
+    }
+}
+
+.mainContainer ::-webkit-scrollbar{
+    background-color: transparent;
+    width: 5px;
+}
+
+.mainContainer ::-webkit-scrollbar-thumb{
+    background-color: rgba(15, 15, 15, 0.445);
+    color: rgb(15, 15, 15);
+    border-radius: 100px;
+}
