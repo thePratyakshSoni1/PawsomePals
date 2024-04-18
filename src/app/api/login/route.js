@@ -20,7 +20,7 @@ export async function POST(request){
             resp = new Response(JSON.stringify({isSuccess: true, isVerified: true}))
             let task = await LoginSessions.addSession(token, data.userId, d)
             if(task.isSuccess){
-                resp.headers.append("set-cookie", `token=${token}; expires=${d.toUTCString()}; httpOnly; path=/;`)
+                resp.headers.append("set-cookie", `token=${token}; expires=${d.toUTCString()}; httpOnly; path=/; Secure;`)
             }else{
                 resp = new Response(JSON.stringify({isSuccess: false, msg: task.msg}))
             }
@@ -64,7 +64,7 @@ export async function DELETE(req){
     let token = req.cookies.get('token')
     if(token) await DataBase.LoginSession().removeSession(token.value)
     // console.log("TK: ", token.value)
-    resp.headers.append("set-cookie", `token=null; expires=${(new Date(0)).toUTCString()}; path=/; httpOnly;`)
+    resp.headers.append("set-cookie", `token=null; expires=${(new Date(0)).toUTCString()}; path=/; Secure; httpOnly;`)
     return resp
 }
 

@@ -25,12 +25,12 @@ export async function apiRouteTokenValidationHandler(cook){
                 let res = await UserOps.userAlreadyExists(loginSessions.id)
                 let verificationResp = new Response(JSON.stringify({isSuccess: res.isSuccess, isVerified: res.isExisting}))
                 if(res.isSuccess && !res.isExisting ){
-                    verificationResp.headers.append("set-cookie", `token=null; expires=${(new Date(0)).toUTCString()}; httpOnly; path=/;`)
+                    verificationResp.headers.append("set-cookie", `token=null; expires=${(new Date(0)).toUTCString()}; httpOnly; path=/; Secure;`)
                 }
                 return { isSuccess: true && res.isExisting, resp: verificationResp, id: loginSessions.id }
             }else{
                 let resp = (new Response(JSON.stringify({isSuccess: true, isVerified: false})))
-                resp.headers.append("set-cookie", `token=null; expires=${(new Date(0)).toUTCString()}; httpOnly; path=/;`)
+                resp.headers.append("set-cookie", `token=null; expires=${(new Date(0)).toUTCString()}; httpOnly; path=/; Secure;`)
                 return {isSuccess: false, resp: resp}
             }
         }else return {isSuccess: false, resp: new Response(JSON.stringify({isSuccess: false, msg: "Unexpected Error"}))}

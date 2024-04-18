@@ -224,7 +224,7 @@ async function getSuccessResponse(userId){
     d.setMonth( d.getMonth() + 2 )
     let task = await DataBase.LoginSession().addSession(token, userId, d)
     if(task.isSuccess){
-        resp.headers.append("set-cookie", `token=${token}; expires=${d.toUTCString()}; httpOnly; path=/;`)
+        resp.headers.append("set-cookie", `token=${token}; expires=${d.toUTCString()}; httpOnly; path=/; Secure;`)
     }else{
         resp = new Response(JSON.stringify({isSuccess: true, msg: "Try Logging in..."}))
     }
