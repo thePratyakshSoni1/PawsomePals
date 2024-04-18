@@ -180,8 +180,8 @@
     min-width: 100vw;
     min-height: 100vh;
     height: -webkit-fill-available;
-    width: -webkit-fill-available;
     height: -moz-available;
+    width: -webkit-fill-available;
     width: -moz-available;
     display: flex;
     top: 0;
@@ -209,6 +209,31 @@
   #loading{
     width: 80px;
     height: 80px;
+    background-color: #ffa50000;
+    clip-path: circle();
+    animation: infinite 3s;
+    animation-name: rotate;
+    animation-timing-function: linear;
+    border-left: solid #ff9c01 12px;
+    border-radius: 100px;
+    border-width: 14px;
+  }
+
+  .pdialogContent{
+    height: inherit;
+    aspect-ratio: 1;
+    background-color: white;
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  #ploading{
+    min-width: 20px;
+    min-height: 20px;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    width: -webkit-fill-available;
+    width: -moz-available;
     background-color: #ffa50000;
     clip-path: circle();
     animation: infinite 3s;

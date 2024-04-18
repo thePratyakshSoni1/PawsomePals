@@ -9,20 +9,11 @@ export default async function Page(){
   try{
     let validation = await apiRouteTokenValidationHandler(cooks)
     if(validation.isSuccess){
-          let listOfMarks = []
           let MarkOps = DataBase.Mark()
 
           let [marks, user] = await Promise.all([MarkOps.getAllMarks(), DataBase.UserOps().getUser(validation.id)])
 
           if(marks.isSuccess){
-            for(let i=0; i<marks.list.length; i++){
-              let img = await DataBase.getImage(MarkOps.fbStorage, marks.list[i].image, false)
-              if(img.isSuccess){
-                listOfMarks.push({...marks.list[i], imgBuf: `data:type=image/*;base64,${Buffer.from(img.buf).toString('base64')}`})
-              }else{
-                listOfMarks.push({...marks.list[i], imgBuf: `placeholder.jpg`})
-              }
-            }
 
             let hasNewNotifs = false
             for(var j=0; j<user.user.notifications.length; j++){
@@ -33,7 +24,7 @@ export default async function Page(){
             }
 
             // console.log("MMs: ", listOfMarks.length)
-            return <HomePage mapMarkers={listOfMarks} hasNewNotifications={hasNewNotifs}/>
+            return <HomePage hasNewNotifications={hasNewNotifs}/>
           }else{
             return <>PAGE NOT WORKING...</>
           }

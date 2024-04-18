@@ -43,8 +43,10 @@ export function OsmMap({
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(map);
       map.setView(initPosition, initZoom);
+      try{
+        document.getElementsByClassName("leaflet-control-attribution")[0].remove()
+      }catch(e){}
       
-    document.getElementsByClassName("leaflet-control-attribution")[0].remove()
       console.log("Setting View to: ", initPosition)
       
     } else if (mapInitState) {
@@ -137,10 +139,11 @@ export function IconButton({
   );
 }
 
-export function TopPlayerCard({ name, karmaPoints, rank, style }) {
+export function TopPlayerCard({ name, karmaPoints, rank, style, imgSrc }) {
   return (
     <div className={styles.topPlayerCard} style={{ ...style }}>
       <span id={styles.rank}>{rank}</span>
+      <Image src={imgSrc} alt="" height={60} width={60} style={{width: "3rem", marginLeft: "0.5rem", clipPath: 'circle()', objectFit: "cover"}}/>
       <span id={styles.name}>{name}</span>
       <span id={styles.points}>{karmaPoints}</span>
     </div>

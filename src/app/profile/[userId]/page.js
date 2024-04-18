@@ -67,7 +67,7 @@ export default async function PublicUserProfile({params}){
                     if(rescuedFetchError) break
                 }
 
-                console.log("SIZE: ", animalsAdded.length, animalsRescued.length)
+                // console.log("SIZE: ", animalsAdded.length, animalsRescued.length)
             }catch(e){
                 isSuccess = false
                 console.log("\n\nError: ", e)
@@ -76,7 +76,7 @@ export default async function PublicUserProfile({params}){
         }else{ msg = task.msg }
     }
 
-    console.log(isSuccess, "&&", user ? true : false)
+    // console.log(isSuccess, "&&", user ? true : false)
     if(isSuccess && user){
         return (<>
             <SimpleTopBar title={user.firstName} />

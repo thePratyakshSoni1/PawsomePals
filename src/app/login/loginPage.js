@@ -21,7 +21,7 @@ export function LoginPage() {
         let resp = await (await loginRequest(userId, password)).json()
         if(resp.isSuccess){
           if(resp.isVerified){
-            router.push("/home")
+            location.replace("/home")
           }else{
             alert(resp.msg)
             setLoading(false)

@@ -91,7 +91,7 @@ export async function PUT(req){
                                     reqData.markId,
                                     reqData.msg
                                 )
-                                console.log("RETURNING notifUpdate: ", notfiUpdate)
+                                // console.log("RETURNING notifUpdate: ", notfiUpdate)
                                 return new Response(JSON.stringify(notfiUpdate))
                             }catch(e){
                                 console.log(e)

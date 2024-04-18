@@ -309,7 +309,7 @@ function UserProfile({
       setLoading(true);
       setAnimalsAdded([]);
       setRescued([]);
-      console.log("Going for: ", marksRescued, marksAdded)
+      // console.log("Going for: ", marksRescued, marksAdded)
 
       let added = [];
       for (let i = 0; i < marksAdded.length; i++) {

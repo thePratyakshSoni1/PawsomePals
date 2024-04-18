@@ -31,7 +31,8 @@ export async function POST(request){
                             [],
                             `${reqData.phone}.png`,
                             reqData.password,
-                            reqData.karma
+                            0,
+                            []
                         )
 
                         userAdded = await UserOps.addUser(userObjToAdd) 
@@ -61,9 +62,7 @@ export async function POST(request){
 
 
 // export async function UPDATE(request: NextRequest){
-export async function PUT(request){
-
-     
+export async function PUT(request){ 
 
       const onUpdate = async (isPhoneChanged, currentUserPhone, UserOps, updatedUser, isImageUpdated, imgBuf)=>{
 

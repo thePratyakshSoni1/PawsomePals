@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export function MapDisplay({location}) {
   const initMap = ()=>{
-    console.log("HELLOW");
+    // console.log("HELLOW");
     console.log("Script Loaded!");
 
     var theMap = L.map("detailsMapView", { zoomControl: false });

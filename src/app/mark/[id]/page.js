@@ -15,11 +15,11 @@ export default async function MarkDetails({ params }) {
     markDetails = markDetails.mark;
     const markImgBuf = await DataBase.getImage(
       MarkOps.fbStorage,
-      markDetails.image
+      markDetails.image, false
     );
     const rescuedImgBuf = markDetails.isRescued ? await DataBase.getImage(
           MarkOps.fbStorage,
-          markDetails.rescuedImg
+          markDetails.rescueImg, false
         )
       : { isSuccess: false };
     // if (markImgBuf.isSuccess && rescuedImgBuf.isSuccess) {

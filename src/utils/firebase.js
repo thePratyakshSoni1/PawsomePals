@@ -368,7 +368,7 @@ export class Mark {
     isInjured,
     isRescued,
     location,
-    rescuedImg,
+    rescueImg,
     addedBy,
     rescuedBy,
     saviourName,
@@ -385,7 +385,7 @@ export class Mark {
         isInjured: isInjured,
         isRescued: isRescued,
         location: location,
-        rescuedImg: rescuedImg,
+        rescueImg: rescueImg,
         addedBy: addedBy,
         rescuedBy: rescuedBy,
         saviourName: saviourName,
@@ -429,7 +429,7 @@ export class Mark {
             mark.get("isInjured"),
             mark.get("isRescued"),
             mark.get("location"),
-            mark.get("rescuedImg"),
+            mark.get("rescueImg"),
             mark.get("addedBy"),
             mark.get("rescuedBy"),
             mark.get("saviourName"),
@@ -554,7 +554,7 @@ export class User {
 
   async getAllUsers() {
     let listOfUsers = [];;
-    const querySnapshot = await getDocs(collection(fireStore, "users"));
+    const querySnapshot = await getDocs(collection(this.fireStore, "users"));
     querySnapshot.forEach((doc) => {
       // console.log(`getAllUsers(): ${doc.id} => ${{...doc.data()}}`);
       listOfUsers.push(doc.data());
@@ -724,7 +724,7 @@ export class User {
               }              
 
               let [markUpdate, requestorUpdate] = await Promise.all([
-                DataBase.UserOps().updateSpecific(authorId, {notifications: authorNotifs}),
+                DataBase.UserOps().updateSpecific(authorId, {notifications: authorNotifs, karma: author.user.karma + 1}),
                 MarkOps.updateSpecific(markid, payloadForMark),
                 this.addNotification({...updatedNotif, msg: msg, type: RescueNotification.TYPES.RequestResponse})
               ])
@@ -778,7 +778,11 @@ export class User {
         if(fetchUserResp.isSuccess && fetchUserResp.isExisting == true){
           let userNotifs = [...fetchUserResp.user.notifications]
           userNotifs.push({...notificationObj})
-          let updatingPayload = {notifications: userNotifs, rescued: (notificationObj.isSeen && notificationObj.isApproved ) ? [...fetchUserResp.user.rescued, notificationObj.markId] : fetchUserResp.user.rescued} 
+          let updatingPayload = {
+            notifications: userNotifs, 
+            rescued: (notificationObj.isSeen && notificationObj.isApproved ) ? [...fetchUserResp.user.rescued, notificationObj.markId] : fetchUserResp.user.rescued,
+            karma: notificationObj.isApproved ? fetchUserResp.user.karma+1 : fetchUserResp.user.karma
+          } 
           let task1 = await this.updateSpecific(notificationObj.rescueRequestBy, updatingPayload)
           return task1
         }else{

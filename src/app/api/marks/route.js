@@ -12,12 +12,14 @@ export async function GET(request){
         let listOfMarks = []
         if(marks.isSuccess){    
             for(let i=0; i<marks.list.length; i++){
-                let img = await DataBase.getImage(MarkOps.fbStorage, marks.list[i].image, false)
-                if(img.isSuccess){
-                    listOfMarks.push({...marks.list[i], imgBuf: `data:type=image/*;base64,${Buffer.from(img.buf).toString('base64')}`})
-                }else{
-                    listOfMarks.push({...marks.list[i], imgBuf: `/placeholder.jpg`})
-                }
+                // let img = await DataBase.getImage(MarkOps.fbStorage, marks.list[i].image, false)
+                let processingMark = marks.list[i]
+                // if(img.isSuccess){
+                    // listOfMarks.push({...processingMark, imgBuf: `data:type=image/*;base64,${Buffer.from(img.buf).toString('base64')}`})
+                // }else{
+                    // listOfMarks.push({...processingMark, imgBuf: `/placeholder.jpg`})
+                    listOfMarks.push({...processingMark})
+                //  }
             }
             return new Response(JSON.stringify({isSuccess: true, markers: listOfMarks}))
         }else{

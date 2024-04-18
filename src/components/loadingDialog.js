@@ -10,3 +10,9 @@ export function LoadingDialog({zIndex=1}){
     </div>
   </>
 }
+
+export function LoadingPlaceHolder({borderWidth="14px", width="", customCss={}}){
+    return <div className={styles.pdialogContent} style={{width: width ,...customCss}}>
+                    <div id={styles.ploading} style={{borderWidth: borderWidth}}></div>
+            </div>
+}

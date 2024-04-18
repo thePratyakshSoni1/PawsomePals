@@ -42,7 +42,7 @@ export default function SignupPage(){
                                     })).json()
 
                                     if(signUpReq.isSuccess){
-                                        router.replace("/login")
+                                        router.replace("/")
                                     }else{
                                         alert(signUpReq.msg)
                                         setLoading(false)

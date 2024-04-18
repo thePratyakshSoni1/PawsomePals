@@ -63,7 +63,7 @@ export async function DELETE(req){
     let resp = new Response("lOGOUT")
     let token = req.cookies.get('token')
     if(token) await DataBase.LoginSession().removeSession(token.value)
-    console.log("TK: ", token.value)
+    // console.log("TK: ", token.value)
     resp.headers.append("set-cookie", `token=null; expires=${(new Date(0)).toUTCString()}; path=/; httpOnly;`)
     return resp
 }
